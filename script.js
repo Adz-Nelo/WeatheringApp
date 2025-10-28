@@ -1,3 +1,31 @@
+// Create stars for the cosmology background
+function createStars() {
+    const cosmos = document.getElementById('cosmos');
+    const starCount = 200;
+    
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        const size = Math.random() * 3;
+        
+        if (size < 1) {
+            star.classList.add('star', 'small');
+        } else if (size < 2) {
+            star.classList.add('star', 'medium');
+        } else {
+            star.classList.add('star', 'large');
+        }
+        
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        
+        cosmos.appendChild(star);
+    }
+}
+
+// Initialize the cosmology background
+createStars();
+
 const container = document.querySelector(".container");
 const search = document.querySelector(".search-box button");
 const weatherBox = document.querySelector(".weather-box");
